@@ -46,5 +46,5 @@ app.use(express.urlencoded({ extended:true }));
 app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 app.use(require('./routes'));
 
-
-server.listen(3333);
+/**process.env são variáveis ambiente que podem ser setada, neste caso pelo heroku */
+server.listen(process.env.PORT || 3333);
